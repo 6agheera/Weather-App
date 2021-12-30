@@ -1,0 +1,111 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+*{ 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+}
+
+body, html{
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+header{
+    display: flex;
+    padding: 30px 50px;
+    background: #10505E;
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+}
+.form-section{
+    align-items: center;
+    padding: 50px 0;
+    margin: 0;
+}
+
+.form{
+    display: flex;
+}
+
+input{
+    padding: 7px 10px;
+    outline: none;
+    border: 1px solid #bfbfbf;
+    border-radius: 3px 0 0 3px;
+    font-size: 1rem;
+}
+
+button{
+    padding: 7px 10px;
+    border: 1px solid #bfbfbf;
+    border-radius: 0 3px 3px 0;
+    border-left: 0;
+    font-size: 1rem;
+    background: #BCEDDC;
+    color: #10505E;
+    font-weight: 600;
+    transition: all .2s ease;
+}
+
+button:hover{
+    transition: all .2s ease;
+    background: #10505E;
+    color: #BCEDDC;
+}
+
+
+
+.weather-display{
+    position: relative;
+    padding: 15px;
+    width: 300px;
+    height: auto;
+    display: flex;
+    border: 1px solid #bfbfbf;
+    border-radius: 3px;
+    margin: 15px 0;
+    box-shadow: rgb(38 57 77) 1px 3px 6px 0px
+}
+
+.media-left{
+    padding-right: 20px;
+}
+.media{
+    display: flex;
+}
+.title{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.flash{
+    width: 260px;
+    border-radius: 3px;
+    padding: 10px 20px;
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: rgb(38 57 77) 1px 3px 6px 0px;
+}
+
+.flash.error{
+    background-color: #d61139;
+}
+.flash.warning{
+    background-color: #ed961c;
+}
+
+.flash.success{
+    background-color: #34eb95;
+}
+
+.button_x{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}

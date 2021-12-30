@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'index.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class = "header_title">Weather App</div>
+    </header>    
+    <section class = 'form-section'>
+        <form action="#" class = 'form' method="post">
+            <input type="text" placeholder="" name="city">
+            <button>Add city</button>
+        </form>
+    </section>
+    <section class="error_msg">
+        {%for cat, msg in get_flashed_messages(true)%}
+            <div class="flash {{cat}}">{{msg}}</div>
+        {%endfor%}
+    </section>
+    <section class="weather-section">
+        <div>
+            {%for weather in weather_data%}
+                <div class="weather-display">
+                    <div class="media">
+                        <figure class="media-left">
+                            <img src="http://openweathermap.org/img/w/{{weather.icon}}.png" alt="Image">
+                        </figure>
+                        <div>
+                            <p>
+                                <span class="title">{{weather.city}}</span>
+                                <br>
+                                <span>{{weather.temperature}}°C</span>
+                                <br>
+                                <span>{{weather.description}}</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="button_x">
+                        <a href="{{url_for('delete', name = weather.city)}}"><button class="delete"></button></a>
+                    </div>
+                </div>
+            {%endfor%}
+        </div>
+    </section>
+</body>
+</html>
